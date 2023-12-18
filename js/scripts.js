@@ -18,7 +18,7 @@ for (let i = 0; i < team.length; i++){
     console.log(team[i]);
 
     let myCard = document.createElement('div');
-    myCard.classList.add('card', 'my-3');
+    myCard.classList.add('card', 'col-3', 'm-3');
     teamContainer.append(myCard);
 
     // ciclo per le key degli Object
@@ -28,9 +28,10 @@ for (let i = 0; i < team.length; i++){
         // teamContainer.innerHTML += '<br>'
     }
     
-    let name = myCard.append('Nome' + ':', team[i]['nome']);
-    let role = myCard.append('Ruolo' + ':', team[i]['ruolo']);
-    let img = myCard.append('Immagine' + ':', team[i]['immagine']);
+    myCard.innerHTML+=`<img class="w-100" src="img/${team[i]['immagine']}" alt="">`;
+    let name = myCard.innerHTML +=`<h2 class="fs-4"> Nome: ${team[i]['nome']}`;
+    let role = myCard.innerHTML +=`<h2 class="fs-4"> Ruolo: ${team[i]['ruolo']}`;
+    let img = myCard.innerHTML +=`<h2 class="fs-5 fw-light"> Immagine: ${team[i]['immagine']}`;
     // myCard.innerHTML += '<br>'
 
 }
