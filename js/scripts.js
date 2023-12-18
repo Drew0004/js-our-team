@@ -20,13 +20,10 @@ for (let i = 0; i < team.length; i++){
     for (let key in team[i]){
         console.log (key + ':', team[i][key]);
         teamContainer.append(team[i][key]);
+        teamContainer.innerHTML += '<br>'
     }
+    teamContainer.innerHTML += '<br>'
 }
-
-
-
-
-
 
 
 
