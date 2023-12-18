@@ -2,6 +2,7 @@
 const team = [];
 let teamContainer = document.querySelector('.team');
 
+
 // Pushati membri del team nell'array
 team.push(addTeamMember('Wayne Barnett', 'Founder & CEO', 'wayne-barnett-founder-ceo.jpg'));
 team.push(addTeamMember('Angela Caroll', 'Chief Editor' , 'angela-caroll-chief-editor.jpg'));
@@ -16,13 +17,22 @@ team.push(addTeamMember('Barbara Ramos', 'Graphic Designer', 'barbara-ramos-grap
 for (let i = 0; i < team.length; i++){
     console.log(team[i]);
 
+    let myCard = document.createElement('div');
+    myCard.classList.add('card', 'my-3');
+    teamContainer.append(myCard);
+
     // ciclo per le key degli Object
     for (let key in team[i]){
         console.log (key + ':', team[i][key]);
-        teamContainer.append(team[i][key]);
-        teamContainer.innerHTML += '<br>'
+        // teamContainer.append(key + ':', team[i][key]);
+        // teamContainer.innerHTML += '<br>'
     }
-    teamContainer.innerHTML += '<br>'
+    
+    let name = myCard.append('Nome' + ':', team[i]['nome']);
+    let role = myCard.append('Ruolo' + ':', team[i]['ruolo']);
+    let img = myCard.append('Immagine' + ':', team[i]['immagine']);
+    // myCard.innerHTML += '<br>'
+
 }
 
 
